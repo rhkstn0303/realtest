@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kitten</title>
+	<style>
+		body
+		{
+			color: black;
+		}
+	</style>
+</head>
+<body onload="intervalAppend()" onclick="intervalClear()">
+	<script type="text/javascript">
+		var timer;
+		function intervalAppend()
+		{
+			timer= setInterval(pluskitten,1000);
+		}
+		function intervalClear()
+		{
+			clearInterval(timer);		}
+		function pluskitten()
+		{
+			var v=document.createElement("img");
+			v.style.width="200px"
+			v.style.height="200px"
+			var vr=Math.floor(Math.random()*100);
+			if(vr<50)
+			v.src="kitten1.jpg"
+			else
+			v.src="kitten2.jpg"
+
+
+			var d=document.getElementById("div1");
+			d.appendChild(v);
+
+
+
+		}
+	</script>
+<div id="div1" >
+	<button onclick="pluskitten()"> Kitten</button><br/>
+</div>
+</body>
+</html>
